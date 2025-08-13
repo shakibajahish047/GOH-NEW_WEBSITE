@@ -216,7 +216,7 @@
                             <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
                                 <small>Education</small>
                             </div>
-                            <h5 class="mb-3">Gate of Hope is deeply committed to the education and well-being of Afghanistan’s children impacted by conflict.                                .</h5>
+                            <h5 class="mb-3">Gate of Hope is deeply committed to the education and well-being of Afghanistan’s children impacted by conflict.                                </h5>
                             <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
                             <div class="causes-progress bg-light p-3 pt-2">
                                 <div class="d-flex justify-content-between">
@@ -249,7 +249,7 @@
                             <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
                                 <small>FOOD AND CLOTHING DISTRIBUTION</small>
                             </div>
-                            <h5 class="mb-3">Gate of Hope, dedicated to supporting Afghanistan, leads crucial initiatives in distributing food and clothing.                                 .</h5>
+                            <h5 class="mb-3">Gate of Hope, dedicated to supporting Afghanistan, leads crucial initiatives in distributing food and clothing.                                 </h5>
                             <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
                             <div class="causes-progress bg-light p-3 pt-2">
                                 <div class="d-flex justify-content-between">
@@ -315,56 +315,85 @@
     <!-- Causes End -->
 
 
-    <!-- Service Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">What We Do</div>
-                <h1 class="display-6 mb-5">Learn More What We Do And Get Involved</h1>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-1.png" alt="">
-                        <h4 class="mb-3">Child Education</h4>
-                        <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="">
-                            Learn More
-                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
-                        <h4 class="mb-3">Medical Treatment</h4>
-                        <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="">
-                            Learn More
-                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
-                        <h4 class="mb-3">Pure Drinking Water</h4>
-                        <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="">
-                            Learn More
-                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+    <!-- our projects start Start -->
+    <!-- Our Projects Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Projects</div>
+            <h1 class="display-6 mb-5">Learn More What We Do And Get Involved</h1>
+
+            <!-- Filter Buttons -->
+            <div class="mb-4">
+                <button class="btn btn-outline-primary me-2 filter-btn" data-category="all">All</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-category="Education">Education</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-category="Food And Cloth Distribution">Food & Cloth</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-category="Women Empowerment">Women Empowerment</button>
             </div>
         </div>
+
+        <!-- Dynamic Projects Container -->
+        <div class="row g-4 justify-content-center" id="project-list"></div>
     </div>
+</div>
+<!-- Our Projects End -->
+
+<!-- Fetch Projects Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const projectList = document.getElementById("project-list");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+
+        let projects = [];
+
+        // Fetch projects from JSON
+        fetch("projects.json")
+            .then(res => res.json())
+            .then(data => {
+                projects = data;
+                renderProjects(projects);
+            });
+
+        // Render projects
+        function renderProjects(items) {
+            projectList.innerHTML = "";
+            items.forEach(project => {
+                const col = document.createElement("div");
+                col.className = "col-lg-4 col-md-6 wow fadeInUp";
+                col.setAttribute("data-wow-delay", "0.1s");
+
+                col.innerHTML = `
+                    <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
+                        <img class="img-fluid mb-4" src="${project.image}" alt="${project.title}">
+                        <h4 class="mb-3">${project.title}</h4>
+                        <p class="mb-4">${project.description}</p>
+                        <a class="btn btn-outline-primary px-3" href="${project.link}">
+                            Learn More
+                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                                <i class="fa fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                projectList.appendChild(col);
+            });
+        }
+
+        // Filter projects
+        filterButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const category = btn.getAttribute("data-category");
+                if (category === "all") {
+                    renderProjects(projects);
+                } else {
+                    const filtered = projects.filter(p => p.category === category);
+                    renderProjects(filtered);
+                }
+            });
+        });
+    });
+</script>
+
     <!-- Service End -->
 
 

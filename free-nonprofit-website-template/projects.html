@@ -1,0 +1,23 @@
+<div class="row g-4 justify-content-center" id="all-projects"></div>
+
+<script>
+  const allContainer = document.getElementById("all-projects");
+
+  fetch("projects.json")
+    .then(res => res.json())
+    .then(data => {
+      renderAllProjects(data);
+    });
+
+  function renderAllProjects(projects) {
+    allContainer.innerHTML = projects.map(p => `
+      <div class="col-lg-4 col-md-6 wow fadeInUp project-item ${p.category}">
+        <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
+          <img class="img-fluid mb-4" src="${p.image}" alt="${p.title}">
+          <h4 class="mb-3">${p.title}</h4>
+          <p class="mb-4">${p.description}</p>
+        </div>
+      </div>
+    `).join("");
+  }
+</script>

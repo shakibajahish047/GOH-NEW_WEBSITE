@@ -1,0 +1,45 @@
+[
+    {
+        "title": "Education",
+        "description": "Strengthening the Educational Landscape for the Marginalized",
+        "image": "img/icon-1.jpg",
+        "category": "Education",
+        "link": "education.html"
+    },
+    {
+        "title": "Education",
+        "description": "Gate of Hope's Impactful Awareness Training Programs in Balkh Province",
+        "image": "img/icon-2.webp",
+        "category": "Education",
+        "link": "food.html"
+    },
+    {
+        "title": "Women Empowerment",
+        "description": "Empowering Communities through Traditional Crafts",
+        "image": "img/icon-3.webp",
+        "category": "Women Empowerment",
+        "link": "women.html"
+    },
+    {
+        "title": "Women Empowerment",
+        "description": "Empowering Change: Gate of Hope's Impactful Journey in Kabul",
+        "image": "img/icon-4.webp",
+        "category": "Women Empowerment",
+        "link": "women.html"
+    },
+    {
+        "title": "Food And Cloth Distribution",
+        "description": "Bringing Warmth and Hope to Afghan Orphans and Displaced Families",
+        "image": "img/icon-5.webp",
+        "category": "Food & Cloth",
+        "link": "women.html"
+    },
+    {
+
+        "title": "Food And Cloth Distribution",
+        "description": "Bringing Warmth and Hope to Afghan Orphans and Displaced Families",
+        "image": "img/icon-6.webp",
+        "category": "Food & Cloth",
+        "link": "women.html"
+    }
+]
