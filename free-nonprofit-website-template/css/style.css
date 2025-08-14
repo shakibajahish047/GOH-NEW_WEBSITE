@@ -446,3 +446,24 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+.mb-4 {
+    display: flex;
+    justify-content: center; /* Center them horizontally */
+    align-items: center;     /* Align vertically */
+    gap: 10px;               /* Space between buttons */
+    flex-wrap: nowrap;       /* Prevent wrapping to next line */
+}
+
+.filter-btn {
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Keep text from breaking to a new line */
+}
+
+.filter-btn:hover {
+    background-color: #FF6F0F;
+    color: white;
+    border-color: #FF6F0F;
+}
