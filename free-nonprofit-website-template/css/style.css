@@ -446,6 +446,32 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+
+/* Footer Responsive Styles */
+@media (max-width: 992px) {
+    .footer .row > div {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer .container.py-4 .row {
+        text-align: center;
+    }
+    
+    .footer .container.py-4 .d-flex {
+        justify-content: center;
+    }
+    
+    .footer .container.py-5 .row > div {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer .container.py-5 .d-flex {
+        justify-content: center;
+    }
+}
 .mb-4 {
     display: flex;
     justify-content: center; /* Center them horizontally */
