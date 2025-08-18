@@ -594,3 +594,42 @@
         white-space: nowrap; /* prevent breaking into two lines */
     }
 }
+/* Project Cards */
+.project-card {
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.project-card img {
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.project-card .btn {
+  border-radius: 30px;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+}
+
