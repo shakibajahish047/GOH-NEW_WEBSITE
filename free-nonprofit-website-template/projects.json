@@ -41,5 +41,77 @@
         "image": "img/icon-6.webp",
         "category": "Food And Cloth Distribution",
         "link": "women.html"
+    },
+      {
+
+        "title": "Education",
+        "description": "A Beacon for the Underprivileged",
+        "image": "img/icon-7.webp",
+        "category": "Education",
+        "link": "education.html"
+    },
+    {
+
+        "title": "Education",
+        "description": "A Meeting of Promise and Collaboration with the Afghan Team",
+        "image": "img/icon-8.webp",
+        "category": "Education",
+        "link": "education.html"
+    },
+    {
+        "title": "Women Empowerment",
+        "description": "Empowering Communities and Celebrating Creativity",
+        "image": "img/icon-9.webp",
+        "category": "Women Empowerment",
+        "link": "women.html"
+    },
+    {
+        "title": "Education",
+        "description": "Internship Agreement Between Gate of Hope Afghanistan and MCA-Afghanistan",
+        "image": "img/icon-10.webp",
+        "category": "Education",
+        "link": "education.html"
+    },
+    {
+        "title": "Education",
+        "description": "Memorandum of Understanding and Gate of Hope",
+        "image": "img/icon-16.webp",
+        "category": "Education",
+        "link": "education.html"
+    },
+    {
+        "title": "Women Empowerment",
+        "description": " Gate of Hope’s Journey to Empower Afghan Artisans",
+        "image": "img/icon-11.webp",
+        "category": "Women Empowerment",
+        "link": "women.html"
+    },
+    {
+        "title": "Education",
+        "description": "HPSA Project Appreciation letter from GOH-Afghanistan to WAR Child Canada",
+        "image": "img/icon-12.webp",
+        "category": "Education",
+        "link": "education.html"
+    },
+    {
+        "title": "Women Empowerment",
+        "description": "Paving the Path to Self-Sufficiency: Gate of Hope’s Endeavors in Samangan Province",
+        "image": "img/icon-13.jpg",
+        "category": "Women Empowerment",
+        "link": "women.html"
+    },
+    {
+        "title": "Women Empowerment",
+        "description": "Gate of Hope’s Visit to the Shams Senai Women’s Sewing and Production Workshop",
+        "image": "img/icon-14.webp",
+        "category": "Women Empowerment",
+        "link": "women.html"
+    },
+    {
+        "title": "Women Empowerment",
+        "description": "Gate of Hope’s Milestone Meeting in Kabul",
+        "image": "img/icon-15.jpg",
+        "category": "Women Empowerment",
+        "link": "women.html"
     }
 ]
