@@ -635,5 +635,35 @@
 .text-justify {
   text-align: justify;
 }
+/* Default fallback */
+.page-header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("../img/default-header.jpg") center center/cover no-repeat;
+  padding: 100px 0;
+}
+
+/* Custom per page */
+.projects-header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("../img/project_header.webp") center center/cover no-repeat;
+
+}
+
+.founder-header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("../img/project_header.webp") center center/cover no-repeat;
+}
+
+.serve-header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("../img/serve-header.jpg") center center/cover no-repeat;
+}
+.page-header {
+  position: relative;
+  padding: 120px 0; /* controls header height */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; /* this is the magic */
+}
 
 
