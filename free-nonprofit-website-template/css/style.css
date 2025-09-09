@@ -1021,3 +1021,27 @@
   font-weight: bold;
 }
 >>>>>>> 5942513aba8b2b79e867698d462c5ba57b649075
+/* Women Empowerment Page Header */
+.women-header {
+  background: linear-gradient(
+              rgba(255, 111, 15, 0.7),   /* brand orange overlay */
+              rgba(136, 0, 85, 0.7)     /* deep purple overlay */
+            ),
+            url("../img/women-header.jpg") center center/cover no-repeat;
+  padding: 120px 0;
+  color: white;
+  position: relative;
+}
+
+.women-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.women-header p {
+  font-size: 1.2rem;
+  color: #f8f8f9;
+  max-width: 700px;
+  margin: 0 auto;
+}
