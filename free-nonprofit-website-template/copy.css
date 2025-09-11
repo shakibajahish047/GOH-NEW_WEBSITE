@@ -1,0 +1,28 @@
+/* Buttons */
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: .6rem;
+}
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #FF6F0F;
+  color: #FF6F0F;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background: #FF6F0F;
+  color: #001D23;
+}
+.btn.primary {
+  background: #FF6F0F;
+  color: #001D23;
+}
+.btn.primary:hover {
+  filter: brightness(1.1);
+}
+/*GBV styles*/

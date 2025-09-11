@@ -29,7 +29,6 @@
     opacity: 1;
 }
 
-
 /*** Button ***/
 .btn {
     font-weight: 500;
@@ -75,7 +74,6 @@
 /*** Navbar ***/
 .fixed-top {
     transition: .5s;
-    background-color: #001D23;
 }
 
 .top-bar {
@@ -1100,34 +1098,7 @@
 }
 
 
-/* Buttons */
-.actions {
-  margin-top: 1rem;
-  display: flex;
-  gap: .6rem;
-}
-.btn {
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid #FF6F0F;
-  color: #FF6F0F;
-  background: transparent;
-  transition: all 0.2s ease;
-}
-.btn:hover {
-  background: #FF6F0F;
-  color: #001D23;
-}
-.btn.primary {
-  background: #FF6F0F;
-  color: #001D23;
-}
-.btn.primary:hover {
-  filter: brightness(1.1);
-}
-/*GBV styles*/
+
 
 .policy-title {
     background-color:  #FF6F0F;
@@ -1236,3 +1207,14 @@
   font-weight: bold;
 }
 
+.btn.btn-outline-primary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn.btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
