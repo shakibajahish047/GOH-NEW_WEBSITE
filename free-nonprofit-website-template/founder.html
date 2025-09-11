@@ -7,7 +7,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+<body class="pagefounder">
   <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +42,7 @@
 </head>
 
 <body>
-    <!-- Spinner Start -->
+     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
@@ -85,12 +85,22 @@
                             <a href="we_serve.html" class="dropdown-item">Whom We Serve</a>
                         </div>
                     </div>
-                    <a href="causes.html" class="nav-item nav-link">What We Do</a>
+                    <!-- What We Do (fixed) -->
+                   <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">What We Do</a>
+                      <div class="dropdown-menu m-0">
+                       <a href="education.html" class="dropdown-item">Educational Support</a>
+                       <a href="women.html" class="dropdown-item">Women Empowerment</a>
+                        <a href="food.html" class="dropdown-item">Food And Cloth Distribution</a>
+                         </div>
+                    </div>
+ 
                     <a href="projects.html" class="nav-item nav-link">Projects</a>
+                   <a href="Polices.html" class="nav-item nav-link">Policies</a>
+
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
-                            <a href="service.html" class="dropdown-item">Service</a>
                             <a href="donate.html" class="dropdown-item">Donate</a>
                             <a href="team.html" class="dropdown-item">Our Team</a>
                             <a href="testimonial.html" class="dropdown-item">Testimonial</a>
@@ -111,15 +121,11 @@
         </nav>
     </div>
     <!-- Navbar End -->
-
   <!-- Page Header -->
    <div class="container-fluid page-header founder-header mb-5">
     <div class="container text-center">
       <h1 class="display-4 text-white">Our Founder</h1>
-        <ol class="breadcrumb justify-content-center mb-0">
-          <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-           <li class="breadcrumb-item text-primary active" aria-current="page">founder Profile</li>
-         </ol>
+      
    </div>
   </div>
 
@@ -127,82 +133,71 @@
   <div class="container py-5">
   <div class="row g-5 align-items-center">
     
-    <!-- Founder Image -->
-    <div class="col-lg-5">
-      <img class="img-fluid rounded shadow" src="img/founder_profile.webp" alt="Founder">
+   <div class="container2">
+
+        <!-- Founder Bio Grid -->
+        <div class="grid founder-bio">
+            <div class="bio-photo">
+                <img src="img/our vision/q72J8wYW_2x-removebg-preview02-e1674803385315.webp" alt="Founder Photo">
+            </div>
+            <div class="bio-info">
+                <h2>SABOOR KAMAL</h2>
+                <p><strong>Education:</strong>Master’s Degree in Social and Political Sciences</p>
+                <p><strong>University</strong> Saint Petersburg State University </p>
+                <p><strong> Occupation:</strong>  Media Journalist, TV Personnel, Writer and Human Rights Activist</p>
+
+                <blockquote>Every Afghan deserves hope and opportunity. This is why we started Gate of Hope —
+        to empower communities through education, support, and dignity</blockquote>
+            </div>
+        </div>
+
+        <!-- Founder Message Grid -->
+        <div class="grid founder-message">
+            <p>As the CEO/Founder of Gate of Hope, I take immense pride in our assembly of an esteemed cadre of professionals. Each member of our team embodies dedication, commitment, and unparalleled expertise, meticulously chosen to advance our mission. Our foremost aim is to not only meet but surpass the expectations vested in us, through the provision of exemplary services.
+       In our relentless pursuit of excellence, we are continuously at the forefront of adopting innovative methodologies and cutting-edge technologies. This ensures our operations are executed with utmost efficiency and effectiveness. Our ethos of perpetual growth and enhancement compels us to seek novel strategies, thereby elevating the caliber of our offerings.<br>
+      
+       At the heart of Gate of Hope lies a profound belief: our success is intricately linked to the contentment of our doners. It is through the fortitude of our partnerships that we gauge our progress. Driven by an indomitable passion to contribute to national advancement, our commitment to excellence is resolute</p>
+        </div>
+
+    
+      <!-- Card 1 -->
+         <!-- Programs Section -->
+  <section class="container py-5">
+    <div class="text-center mb-5">
+      <h2 class="text-primary">Founder Activites</h2>
+      <p class="text-muted"></p>
     </div>
-
-    <!-- Founder Info -->
-    <div class="col-lg-7">
-      <h2 class="mb-3">SABOOR KAMAL</h2>
-      <h5 class="text-primary mb-3">Founder and Chairman of Gate Of Hope</h5>
-      <p class="text-muted mb-4">
-        "Every Afghan deserves hope and opportunity. This is why we started Gate of Hope —
-        to empower communities through education, support, and dignity."
-      </p>
-
-      <!-- Profile Details -->
-      <ul class="list-unstyled">
-        <li><strong>🎓 Education:</strong> Saint Petersburg State University</li>
-        <li><strong>📚 Field of Study:</strong> Master’s Degree in Social and Political Sciences</li>
-        <li><strong>💼 Occupation:</strong> Media Journalist, TV Personnel, Writer and Human Rights Activist</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-
-  <!-- Message from the Founder -->
-  <div class="container py-5">
-    <h3 class="text-center mb-4">Message from the Founder</h3>
-    <p class="lead text-justify">As the CEO/Founder of Gate of Hope, I take immense pride in our assembly of an esteemed cadre of professionals. Each member of our team embodies dedication, commitment, and unparalleled expertise, meticulously chosen to advance our mission. Our foremost aim is to not only meet but surpass the expectations vested in us, through the provision of exemplary services.
-       In our relentless pursuit of excellence, we are continuously at the forefront of adopting innovative methodologies and cutting-edge technologies. This ensures our operations are executed with utmost efficiency and effectiveness. Our ethos of perpetual growth and enhancement compels us to seek novel strategies, thereby elevating the caliber of our offerings.
-
-       At the heart of Gate of Hope lies a profound belief: our success is intricately linked to the contentment of our doners. It is through the fortitude of our partnerships that we gauge our progress. Driven by an indomitable passion to contribute to national advancement, our commitment to excellence is resolute.</p>
-  </div>
-
-  <!-- Timeline / Activities -->
-<div class="container py-5">
-  <h3 class="text-center mb-4">Founder’s Activities</h3>
-  <div class="row g-4">
-
-    <!-- Activity Card -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="img/first_activity.webp" class="card-img-top" alt="Founder Activity 1">
-        <div class="card-body text-center">
-          <h5 class="card-title">2019</h5>
-          <p class="card-text, lead text-justify">In 2019, the bustling streets of Balkh province witnessed an event that marked a significant milestone in the humanitarian landscape of Afghanistan. It was the inauguration of the main office of Gate of Hope. The event was not just a mere opening of an office space; it symbolized hope, commitment, and a promise to uplift and support those in dire need.</p>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="project-card position-relative" data-bs-toggle="modal" data-bs-target="#program1Modal">
+          <img src="img/img1.jpg" class="img-fluid" alt="Program Image">
+          <div class="project-overlay">
+            <h4></h4>
+            <p>In 2019, the bustling streets of Balkh province witnessed an event that marked a significant milestone in the humanitarian landscape of Afghanistan. It was the inauguration of the main office of Gate of Hope. The event was not just a mere opening of an office space; it symbolized hope, commitment, and a promise to uplift and support those in dire need.</p></p>
+            <p></p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Activity Card -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="img/second_activity.webp" class="card-img-top" alt="Founder Activity 2">
-        <div class="card-body text-center">
-          <h5 class="card-title">2020</h5>
-          <p class="card-text, lead text-justify">In a significant display of unwavering commitment and collaboration, the leadership of Gate of Hope NGO recently held a crucial meeting with the Afghan team. The discussion centered around extending and enhancing services for our fellow countrymen in Afghanistan, particularly in the relevant provinces where Gate of Hope operates. This meeting not only reaffirms Gate of Hope’s dedication to making a difference but also promises new horizons of collaboration.</p>
+         <div class="col-lg-4 col-md-6">
+        <div class="project-card position-relative" data-bs-toggle="modal" data-bs-target="#program1Modal">
+          <img src="img/img6.jpg" class="img-fluid" alt="Program Image">
+          <div class="project-overlay">
+            <h4></h4>
+            <p>In a significant display of unwavering commitment and collaboration, the leadership of Gate of Hope NGO recently held a crucial meeting with the Afghan team. The discussion centered around extending and enhancing services for our fellow countrymen in Afghanistan, particularly in the relevant provinces where Gate of Hope operates. This meeting not only reaffirms Gate of Hope’s dedication to making a difference but also promises new horizons of collaboration.</p>
+            <p></p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Activity Card -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="img/img1.jpg" class="card-img-top" alt="Founder Activity 3">
-        <div class="card-body text-center">
-          <h5 class="card-title">2020</h5>
-          <p class="card-text">Expanded educational programs to multiple provinces.</p>
+          <div class="col-lg-4 col-md-6">
+        <div class="project-card position-relative" data-bs-toggle="modal" data-bs-target="#program1Modal">
+          <img src="img/img7.jpg" class="img-fluid" alt="Program Image">
+          <div class="project-overlay">
+            <h4></h4>
+            <p> Expanded educational programs to multiple provinces.</p>
+            <p></p>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</div>
- 
 
   <!-- Call to Action -->
   <div class="container text-center py-5">
