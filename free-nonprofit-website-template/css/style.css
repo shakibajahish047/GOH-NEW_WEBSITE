@@ -1047,6 +1047,11 @@
   gap: 800px;
  margin-top: 200px;
     
+
+}
+
+.page1{
+    background-color: #001D23;
 }
 
 
@@ -1065,16 +1070,23 @@
   }
 }
 .card1 {
+  position: relative;
   background: #062830;
-  border: 1px solid #0d3a44;
+  border: 2px solid transparent; 
   border-radius: 14px;
   padding: 1.2rem;
   box-shadow: 0 6px 16px rgba(0,0,0,0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 500px;
-  margin-left:20px;
+  width:470px;
+  height: auto;
+  margin-left: 20px;
 
+  
+  background: 
+    linear-gradient(#062830, #062830) padding-box,
+    linear-gradient(90deg,#0355b3, #023d4d, #ff8c00) border-box;
 }
+
 .card1:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.6);
