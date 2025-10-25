@@ -1071,20 +1071,25 @@
 }
 .card1 {
   position: relative;
-  background: #062830;
+  background: 
+    linear-gradient(#062830, #062830) padding-box,
+    linear-gradient(90deg,#0355b3, #023d4d, #ff8c00) border-box;
   border: 2px solid transparent; 
   border-radius: 14px;
   padding: 1.2rem;
   box-shadow: 0 6px 16px rgba(0,0,0,0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width:470px;
+  width: 90%;
+  max-width: 470px;
   height: auto;
-  margin-left: 20px;
+  margin: 1rem auto; /* مرکز کردن کارت */
+}
 
-  
-  background: 
-    linear-gradient(#062830, #062830) padding-box,
-    linear-gradient(90deg,#0355b3, #023d4d, #ff8c00) border-box;
+@media (max-width: 600px) {
+  .card1 {
+    padding: 0.8rem;
+    width: 95%;
+  }
 }
 
 .card1:hover {
@@ -1284,7 +1289,7 @@
 /* Founder Bio */
 .founder-bio {
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 12.5% 1fr;
     gap: 20px;
     align-items: center;
     color: #001D23;
