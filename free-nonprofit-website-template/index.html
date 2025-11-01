@@ -90,13 +90,17 @@
                 </div>
                 <a href="projects.html" class="nav-item nav-link">Projects</a>
                 <a href="Polices.html" class="nav-item nav-link">Policies</a>
-                
+           <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Media & Publication</a>
+                 <div class="dropdown-menu m-0">
+                  <a href="news.html" class="dropdown-item">News</a>
+                  <a href="events.html" class="dropdown-item">Upcoming Events</a>
+                 </div>
+              </div>
+
+
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
+
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
@@ -1243,16 +1247,22 @@
       <!-- Feedback Form -->
       <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
         <h2 class="text-primary mb-4">Share Your Feedback</h2>
-        <form id="feedbackForm">
+        <form id="feedbackForm" action="https://formsubmit.co/complaints@goha-afg.org" method="POST">
+            <input type="hidden" name="_subject" value="New Feedback from Gate of Hope Website!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://goha-afg.org/thankyou.html">
+
           <div class="mb-3">
             <input type="text" class="form-control" name="name" placeholder="Your Name" required>
           </div>
           <div class="mb-3">
             <input type="email" class="form-control" name="email" placeholder="Your Email" required>
           </div>
-          <div class="mb-3">
-            <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
-          </div>
+           <div class="mb-3">
+             <textarea class="form-control" id="messageBox" name="message" rows="4" placeholder="Your Message" required></textarea>
+             <small id="wordCount" class="text-muted">0 / 150 words</small>
+           </div>
+
           <button type="submit" class="btn btn-primary px-4 py-2">
             Send Feedback
             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
@@ -1268,13 +1278,43 @@
 </div>
 <!-- Feedback Section End -->
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const messageBox = document.getElementById("messageBox");
+    const wordCount = document.getElementById("wordCount");
+    const feedbackForm = document.getElementById("feedbackForm");
+    const maxWords = 150; // Change this to whatever limit you want
+
+    // Count words
+    messageBox.addEventListener("input", () => {
+      const words = messageBox.value.trim().split(/\s+/).filter(word => word.length > 0);
+      const count = words.length;
+      wordCount.textContent = `${count} / ${maxWords} words`;
+
+      if (count > maxWords) {
+        wordCount.classList.add("text-danger");
+      } else {
+        wordCount.classList.remove("text-danger");
+      }
+    });
+
+    // Prevent submitting too many words
+    feedbackForm.addEventListener("submit", (e) => {
+      const words = messageBox.value.trim().split(/\s+/).filter(word => word.length > 0);
+      if (words.length > maxWords) {
+        e.preventDefault();
+        alert(`Your message is too long! Please keep it under ${maxWords} words.`);
+      }
+    });
+  });
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script>
   function blink() {
     gsap.to(["#left_eyelid", "#right_eyelid"], {
       y: 15,
-      duration: 0.5,
+      duration: 0.9,
       yoyo: true,
       repeat: 1
     });
@@ -1284,35 +1324,76 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script>
-  gsap.to("#mouth", {
-    scaleY: 1.2,
-    y: -3,
-    duration: 0.5,
-    ease: "power1.inOut",
-    yoyo: true,
-    repeat: -1
+  document.addEventListener("DOMContentLoaded", () => {
+    const feedbackForm = document.querySelector("#feedbackForm");
+
+    function smileMascot() {
+      // Big smile animation
+      gsap.to("#mouth", {
+        scaleY: 1.5,
+        y: -5,
+        duration: 0.5,
+        ease: "power1.out"
+      });
+
+      // Optional: eyelids move slightly down for “smiley eyes”
+      gsap.to(["#left_eyelid", "#right_eyelid"], {
+        y: 8,
+        duration: 0.4,
+        ease: "power1.out"
+      });
+
+      // Return to normal after 2 seconds
+      setTimeout(() => {
+        gsap.to("#mouth", { scaleY: 1, y: 0, duration: 0.5, ease: "power1.inOut" });
+        gsap.to(["#left_eyelid", "#right_eyelid"], { y: 0, duration: 0.4, ease: "power1.inOut" });
+      }, 2000);
+    }
+
+    if (feedbackForm) {
+      feedbackForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // Prevent real submission for now
+        smileMascot();
+        document.querySelector("#formStatus").textContent = "Thank you for your feedback!";
+      });
+    }
   });
 </script>
+
 <script>
-    gsap.to("#right_hand", {
-  rotation: -10,         // swing angle
-  transformOrigin: "top right", // pivot point (adjust based on SVG)
-  duration: 0.5,
-  yoyo: true,
-  repeat: 15,            // number of back/forth waves
-  ease: "power1.inOut"
-});
+  document.addEventListener("DOMContentLoaded", () => {
+    const nameInput = document.querySelector("#feedbackForm input[name='name']");
+
+    function waveHands() {
+      gsap.to("#right_hand", {
+        rotation: -10,
+        transformOrigin: "top right",
+        duration: 0.9,
+        yoyo: true,
+        repeat: 15,
+        ease: "power1.inOut"
+      });
+      gsap.to("#left_hand", {
+        rotation: 10,
+        transformOrigin: "top left",
+        duration: 0.9,
+        yoyo: true,
+        repeat: 15,
+        ease: "power1.inOut"
+      });
+    }
+
+    if (nameInput) {
+      let typingTimer;
+      nameInput.addEventListener("input", () => {
+        clearTimeout(typingTimer);
+        waveHands(); //  trigger on typing
+        typingTimer = setTimeout(() => {}, 500);
+      });
+    }
+  });
 </script>
-<script>
-    gsap.to("#left_hand", {
-  rotation: 10,         // swing angle
-  transformOrigin: "top right", // pivot point (adjust based on SVG)
-  duration: 0.5,
-  yoyo: true,
-  repeat: 15,            // number of back/forth waves
-  ease: "power1.inOut"
-});
-</script>
+
 <script>
   // Get the eye elements
   const leftEye = document.querySelector("#left_eyeball");
