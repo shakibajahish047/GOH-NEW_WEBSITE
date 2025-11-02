@@ -1,40 +1,5 @@
 [
     {
-        "title": "Education",
-        "description": "Strengthening the Educational Landscape for the Marginalized",
-        "image": "img/icon-1.jpg",
-        "category": "Education",
-        "link": "education.html"
-    },
-    {
-        "title": "Education",
-        "description": "Gate of Hope's Impactful Awareness Training Programs in Balkh Province",
-        "image": "img/icon-2.webp",
-        "category": "Education",
-        "link": "food.html"
-    },
-    {
-        "title": "Women Empowerment",
-        "description": "Empowering Communities through Traditional Crafts",
-        "image": "img/icon-3.webp",
-        "category": "Women Empowerment",
-        "link": "women.html"
-    },
-    {
-        "title": "Women Empowerment",
-        "description": "Empowering Change: Gate of Hope's Impactful Journey in Kabul",
-        "image": "img/icon-4.webp",
-        "category": "Women Empowerment",
-        "link": "women.html"
-    },
-    {
-        "title": "Food And Cloth Distribution",
-        "description": "Bringing Warmth and Hope to Afghan Orphans and Displaced Families",
-        "image": "img/icon-5.webp",
-        "category": "Food And Cloth Distribution",
-        "link": "women.html"
-    },
-    {
 
         "title": "Food And Cloth Distribution",
         "description": "Bringing Warmth and Hope to Afghan Orphans and Displaced Families",
@@ -42,75 +7,10 @@
         "category": "Food And Cloth Distribution",
         "link": "women.html"
     },
-      {
-
-        "title": "Education",
-        "description": "A Beacon for the Underprivileged",
-        "image": "img/icon-7.webp",
-        "category": "Education",
-        "link": "education.html"
-    },
-    {
-
-        "title": "Education",
-        "description": "A Meeting of Promise and Collaboration with the Afghan Team",
-        "image": "img/icon-8.webp",
-        "category": "Education",
-        "link": "education.html"
-    },
     {
         "title": "Women Empowerment",
         "description": "Empowering Communities and Celebrating Creativity",
         "image": "img/icon-9.webp",
-        "category": "Women Empowerment",
-        "link": "women.html"
-    },
-    {
-        "title": "Education",
-        "description": "Internship Agreement Between Gate of Hope Afghanistan and MCA-Afghanistan",
-        "image": "img/icon-10.webp",
-        "category": "Education",
-        "link": "education.html"
-    },
-    {
-        "title": "Education",
-        "description": "Memorandum of Understanding and Gate of Hope",
-        "image": "img/icon-16.webp",
-        "category": "Education",
-        "link": "education.html"
-    },
-    {
-        "title": "Women Empowerment",
-        "description": " Gate of Hope’s Journey to Empower Afghan Artisans",
-        "image": "img/icon-11.webp",
-        "category": "Women Empowerment",
-        "link": "women.html"
-    },
-    {
-        "title": "Education",
-        "description": "HPSA Project Appreciation letter from GOH-Afghanistan to WAR Child Canada",
-        "image": "img/icon-12.webp",
-        "category": "Education",
-        "link": "education.html"
-    },
-    {
-        "title": "Women Empowerment",
-        "description": "Paving the Path to Self-Sufficiency: Gate of Hope’s Endeavors in Samangan Province",
-        "image": "img/icon-13.jpg",
-        "category": "Women Empowerment",
-        "link": "women.html"
-    },
-    {
-        "title": "Women Empowerment",
-        "description": "Gate of Hope’s Visit to the Shams Senai Women’s Sewing and Production Workshop",
-        "image": "img/icon-14.webp",
-        "category": "Women Empowerment",
-        "link": "women.html"
-    },
-    {
-        "title": "Women Empowerment",
-        "description": "Gate of Hope’s Milestone Meeting in Kabul",
-        "image": "img/icon-15.webp",
         "category": "Women Empowerment",
         "link": "women.html"
     }
