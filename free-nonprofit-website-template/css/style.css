@@ -1013,7 +1013,7 @@
 .women-header {
   background:#001D23;    
            
-  url("../img/women-header.jpg") center center/cover no-repeat;
+  ur("../img/women-header.jpg") center center/cover no-repeat;
   padding: 120px 0;
   color: white;
   position: relative;
