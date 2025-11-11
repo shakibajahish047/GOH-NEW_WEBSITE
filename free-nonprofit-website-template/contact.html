@@ -1,302 +1,237 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact - Gate of Hope Organization</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Gate of Hope</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    html, body { height: 100%; }
+    body { background-color: #1a1a1a; display: flex; justify-content: center; align-items: center; padding: 20px; }
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    .contact-container {
+      display: flex;
+      width: 900px;
+      max-width: 95%;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(255, 165, 0, 0.3);
+    }
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    /* LEFT FORM */
+    .contact-form {
+      flex: 1;
+      padding: 50px 45px;
+      background: linear-gradient(135deg, #ff8c42 0%, #ffa500 100%);
+    }
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    .contact-form h2 {
+      color: #000;
+      font-size: 32px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+    }
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a1a1a;
-            margin: 0;
-            padding-top: 150px; /* fixed navbar spacing */
-        }
+    .contact-form h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: #000;
+      border-radius: 2px;
+    }
 
-        /* CONTACT CONTAINER */
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 95%;
-            max-width: 900px;
-            margin: auto;
-            background: #000;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.3);
-        }
+    .contact-form p {
+      color: #1a1a1a;
+      margin-bottom: 35px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
 
-        /* LEFT FORM */
-        .contact-form {
-            flex: 1;
-            padding: 50px 30px;
-            background: linear-gradient(135deg, #FF6F0F 0%, #FF6F0F 100%);
-        }
+    .form-group { margin-bottom: 24px; position: relative; }
+    label { display: block; font-size: 14px; margin-bottom: 8px; color: #000; font-weight: 500; }
+    .form-group:focus-within label { color: #fff; }
 
-        .contact-form h2 {
-            color: #000;
-            font-size: 32px;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
+    input, textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #000;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #fff;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
 
-        .contact-form h2::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: #000;
-            border-radius: 2px;
-        }
+    input:focus, textarea:focus {
+      border-color: #ffa500;
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(255, 165, 0, 0.3);
+      transform: translateY(-2px);
+    }
 
-        .contact-form p { color: #1a1a1a; margin-bottom: 30px; }
-        .form-group { margin-bottom: 20px; position: relative; }
-        label { color: #000; font-weight: 500; }
-        input, textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 8px;
-            border: 2px solid #000;
-            background: #fff;
-            color: #000;
-            font-size: 14px;
-        }
-        input:focus, textarea:focus {
-            border-color: #FF6F0F;
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(255,165,0,0.2);
-        }
-        .btn-contact {
-            width: 100%;
-            padding: 14px 32px;
-            border-radius: 8px;
-            border: 2px solid #FF6F0F;
-            background: #000;
-            color: #FF6F0F;
-            font-weight: 500;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .btn-contact:hover {
-            background: #fff;
-            color: #000;
-            box-shadow: 0 6px 20px rgba(255,165,0,0.4);
-        }
+    input:hover, textarea:hover { border-color: #ffa500; }
 
-        /* RIGHT ANIMATION */
-        .contact-animation {
-            flex: 1;
-            min-width: 300px;
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 10px;
-            position: relative;
-            overflow: hidden;
-        }
+    textarea { resize: none; height: 130px; }
 
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 165, 0, 0.1);
-        }
-        .circle:nth-child(1) { width: 80px; height: 80px; top: 10%; left: 10%; animation: float1 6s ease-in-out infinite; }
-        .circle:nth-child(2) { width: 60px; height: 60px; top: 60%; left: 80%; animation: float2 8s ease-in-out infinite; }
-        .circle:nth-child(3) { width: 100px; height: 100px; top: 70%; left: 5%; animation: float3 7s ease-in-out infinite; }
-        .circle:nth-child(4) { width: 50px; height: 50px; top: 20%; right: 10%; animation: float1 9s ease-in-out infinite; }
+    .btn {
+      background: #000;
+      color: #ffa500;
+      border: 2px solid #ffa500;
+      padding: 14px 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      width: 100%;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
 
-        @keyframes float1 { 0%,100%{transform:translateY(0)}50%{transform:translateY(-20px) translateX(10px)} }
-        @keyframes float2 { 0%,100%{transform:translateY(0)}50%{transform:translateY(20px) translateX(-10px)} }
-        @keyframes float3 { 0%,100%{transform:translateY(0)}50%{transform:translateY(-15px) translateX(-15px)} }
+    .btn:hover {
+      background: #fff;
+      color: #000;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255,165,0,0.4);
+    }
 
-        .logo { position: relative; z-index: 2; text-align: center; margin-bottom: 65px; }
-        .logo h1 { color: #ffa500; font-size: 32px; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .logo p { color: #fff; font-size: 14px; }
+    /* RIGHT SECTION */
+    .contact-animation {
+      flex: 1;
+      background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 30px 20px;
+    }
 
-        .social-icons { position: relative; z-index: 2; display: flex; gap: 15px; margin-top: 85px; }
-        .social-icons a { color: #fff; font-size: 22px; border: 1px solid rgba(255,255,255,0.7); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease; text-decoration: none; }
-        .social-icons a:hover { background: #fff; color: #007bff; transform: scale(1.1); }
+    .circle {
+         position: absolute;
+         border-radius: 50%;
+         background: rgba(255, 165, 0, 0.1); }
+    .circle:nth-child(1) { width: 80px; height: 80px; top: 10%; left: 10%; animation: float1 6s ease-in-out infinite; }
+    .circle:nth-child(2) { width: 60px; height: 60px; top: 60%; left: 80%; animation: float2 8s ease-in-out infinite; }
+    .circle:nth-child(3) { width: 100px; height: 100px; top: 70%; left: 5%; animation: float3 7s ease-in-out infinite; }
+    .circle:nth-child(4) { width: 50px; height: 50px; top: 20%; right: 10%; animation: float1 9s ease-in-out infinite; }
 
-        @media(max-width:768px){
-            .contact-container{flex-direction:column;}
-            .logo h1{font-size:26px;}
-        }
-    </style>
+    @keyframes float1 { 0%,100%{transform:translateY(0px)}50%{transform:translateY(-20px) translateX(10px)} }
+    @keyframes float2 { 0%,100%{transform:translateY(0px)}50%{transform:translateY(20px) translateX(-10px)} }
+    @keyframes float3 { 0%,100%{transform:translateY(0px)}50%{transform:translateY(-15px) translateX(-15px)} }
+
+    .logo { position: relative; z-index: 2; text-align: center; margin-bottom: 139px; }
+    .logo h1 { color: #ffa500; font-size: 32px; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    .logo p { color: #fff; font-size: 14px; margin-top: 5px; }
+
+    .social-icons { position: relative; z-index: 2; display: flex; gap: 15px; margin-top: 135px; }
+    .social-icons a { color: #fff; font-size: 22px; border: 1px solid rgba(255,255,255,0.7); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease; text-decoration: none; }
+    .social-icons a:hover { background: #fff; color: #007bff; transform: scale(1.1); }
+
+    @media (max-width: 768px) {
+      .contact-container { flex-direction: column; }
+      .contact-animation { min-height: 400px; }
+      .logo h1 { font-size: 26px; }
+    }
+  </style>
 </head>
 <body>
-<<<<<<< Updated upstream
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
-
-
-    <!-- Navbar Start -->
-<div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-    <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
-        <div class="col-lg-6 px-5 text-start">
-            <small><i class="fa fa-map-marker-alt me-2"></i>Darwaz-E-Balkh, Mazar-E-Sherif, Afghanistan</small>
-            <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@goha-afg.org</small>
-        </div>
-        <div class="col-lg-6 px-5 text-end">
-            <small>Follow us:</small>
-            <a class="text-white-50 ms-3" href="https://www.facebook.com/gateofhopecharity?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
-            <a class="text-white-50 ms-3" href="https://www.instagram.com/afghanistanhumanrights/"><i class="fab fa-instagram"></i></a>
-            <a class="text-white-50 ms-3" href="https://www.youtube.com/@GateOfHopeCharityFoundation/videos"><i class="fab fa-youtube"></i></a>
-            <a class="text-white-50 ms-3" href="https://www.linkedin.com/company/gate-of-hope-afghanistan-organization/"><i class="fab fa-linkedin"></i></a>
-            <a class="text-white-50 ms-3" href="https://wa.me/93780946190" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        
-        <a href="index.html" class="navbar-brand d-flex align-items-center me-auto">
-            <img src="img/logo.png" alt="Gate of Hope Logo" class="me-2" style="height: 40px; width: auto;">
-            <h1 class="fw-bold text-primary m-0">Gate of <span class="text-white">Hope</span></h1>
-        </a>
-        
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link ">Home</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Who We Are</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="founder.html" class="dropdown-item">Founder Profile</a>
-                        <a href="vision.html" class="dropdown-item">Our Vision And Values</a>
-                        <a href="we_serve.html" class="dropdown-item">Whom We Serve</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">What We Do</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="education.html" class="dropdown-item">Educational Support</a>
-                        <a href="women.html" class="dropdown-item">Women Empowerment</a>
-                        <a href="food.html" class="dropdown-item">Kit Distribution</a>
-                    </div>
-                </div>
-                <a href="projects.html" class="nav-item nav-link">Projects</a>
-                <a href="Polices.html" class="nav-item nav-link">Policies</a>
-                <div class="nav-item dropdown">
-                <a href="media.html" class="nav-link dropdown-toggle" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Media & Publication
-                </a>
-                <div class="dropdown-menu m-0" aria-labelledby="mediaDropdown">
-                <a href="news.html" class="dropdown-item">News</a>
-               <a href="events.html" class="dropdown-item">Upcoming Events</a>
-                <a href="story.html" class="dropdown-item">Success story</a>
-               </div>
-               </div>
-
-        <script>
-  // Allow main dropdown link to navigate as well
-  document.querySelectorAll('.nav-item.dropdown > a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && href !== '#') {
-        window.location.href = href; // Navigate normally
-      }
-    });
-  });
-</script>
-=======
->>>>>>> Stashed changes
-
-
-
-<!-- CONTACT FORM -->
-<div class="contact-container mt-5">
+  <div class="contact-container">
+    <!-- LEFT FORM -->
     <div class="contact-form">
-        <h2>Contact Us</h2>
-        <p>Let's get in touch!</p>
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" placeholder="Write your message..." required></textarea>
-            </div>
-            <button class="btn-contact" type="submit">Send Message</button>
-        </form>
+      <h2>Contact Us</h2>
+      <p>Let's get in touch!</p>
+      <form id="contactForm">
+        <div class="form-group"><label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group"><label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group"><label for="message">Message</label>
+          <textarea id="message" placeholder="Write your message..." required></textarea>
+        </div>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
     </div>
 
+    <!-- RIGHT SECTION -->
     <div class="contact-animation">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
 
-        <div class="logo">
-            <p>Connect with us</p>
-        </div>
+      <div class="logo">
+        
+        <p>Connect with us</p>
+      </div>
 
-        <div class="character" id="lottie" 
-        style="width:420px; 
-        height:355px; 
-        margin:10 auto;">
-        </div>
-
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
+      <div class="character" id="lottie" 
+     style="
+       width: 235px;
+       height: 235px;
+       margin: 0 auto;
+       display: block;
+       transform: scale(1.8);
+       transform-origin: center;
+     ">
 </div>
 
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a> 
+        <a href="#"><i class="fab fa-whatsapp"></i></a> 
+        <a href="#"><i class="fab fa-twitter"></i></a> 
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
 
-<script>
-    // Lottie Animation
-    var animation = lottie.loadAnimation({
-        container: document.getElementById('lottie'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'https://assets10.lottiefiles.com/packages/lf20_puciaact.json'
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const successMsg = document.createElement('div');
+      successMsg.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #28a745; color: white; padding: 15px 25px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000;';
+      successMsg.innerHTML = '<strong>Success!</strong> Your message has been sent.';
+      document.body.appendChild(successMsg);
+      setTimeout(() => successMsg.remove(), 3000);
+      this.reset();
     });
+  </script>
+</body>
+</html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+  <script>
     
-
-    // Contact Form
-    $('#contactForm').submit(function(e){
-        e.preventDefault();
-        const successMsg = $('<div style="position:fixed;top:20px;right:20px;background:#28a745;color:#fff;padding:15px 25px;border-radius:5px;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:1000;"><strong>Success!</strong> Your message has been sent.</div>');
-        $('body').append(successMsg);
-        setTimeout(()=>successMsg.remove(),3000);
-        this.reset();
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const successMsg = document.createElement('div');
+      successMsg.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #28a745; color: white; padding: 15px 25px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000;';
+      successMsg.innerHTML = '<strong>Success!</strong> Your message has been sent.';
+      document.body.appendChild(successMsg);
+      setTimeout(() => successMsg.remove(), 3000);
+      this.reset();
     });
-</script>
+
+    
+    var animation = lottie.loadAnimation({
+      container: document.getElementById('lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets10.lottiefiles.com/packages/lf20_puciaact.json'
+    });
+  </script>
 </body>
 </html>
