@@ -1273,7 +1273,7 @@
 
 /* Common Grid Styles */
 .grid {
-    background-color: #fff;
+    background-color:#001D23;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -1285,23 +1285,74 @@
 }
 
 /* Founder Bio */
+
+/* Parent container */
+.goho-bio-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    margin: 20px 0;
+    font-family: "Arial", sans-serif;
+    gap: 50px;
+      
+}
+
+/* Photo section */
+.goho-bio-photo img {
+    width: 250px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-top: 20%;
+    margin-left:30%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+
+/* Founder name */
+.goho-bio-name {
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color:#FF6F0F;
+    margin-left:80px;
+}
+
+
+
+/* Main description */
+.goho-bio-description {
+    line-height: 1.6;
+    margin: 10px 0 20px;
+    color: white;
+    margin-left: 10%;
+}
+
+/* Quote style */
+.goho-bio-quote {
+    font-style: italic;
+    padding-left: 15px;
+    border-left: 3px solid #FF6F0F;
+    color: #FF6F0F;
+    margin-left:80px;
+  
+}
+
+
+
+
 .founder-bio {
     display: grid;
     grid-template-columns: 12.5% 1fr;
     gap: 20px;
     align-items: center;
-    color: #001D23;
-     border-left: 5px solid #FF6F0F;
-      border-right: 5px solid #FF6F0F;
+    color: #fffefe;
+ 
 
 }
 
-.bio-photo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 20%;
-    object-fit: cover;
-}
+
 
 .bio-info h2 {
     margin-bottom: 10px;
@@ -1315,12 +1366,14 @@
 
 /* Founder Message */
 .founder-message {
+    background-color: #ddd;
     text-align: center;
     font-size: 1.2rem;
-    color: #001D23;
-    border-left: 5px solid #FF6F0F;
+    color: #000000;
+
+   
     padding-left: 15px;
-     border-right: 5px solid #FF6F0F;
+    
 }
 
 
