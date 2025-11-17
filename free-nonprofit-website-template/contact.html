@@ -1,152 +1,283 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Gate of Hope</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    html, body { height: 100%; }
-    body { background-color: #1a1a1a; display: flex; justify-content: center; align-items: center; padding: 20px; }
+    <meta charset="utf-8">
+    <title>Contact - Gate Of Hope Organization</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .contact-container {
-      display: flex;
-      width: 900px;
-      max-width: 95%;
-      background: #000;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(255, 165, 0, 0.3);
-    }
+    <!-- Favicon -->
+    <link href="img/logo.png" rel="icon">
 
-    .contact-form { flex: 1; padding: 50px 45px; background: linear-gradient(135deg, #ff8c42 0%, #ffa500 100%); }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
 
-    .contact-form h2 { color: #000; font-size: 32px; margin-bottom: 12px; font-weight: 600; position: relative; display: inline-block; }
-    .contact-form h2::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 4px; background: #000; border-radius: 2px; }
+    <!-- Icon Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    .contact-form p { color: #1a1a1a; margin-bottom: 35px; font-size: 15px; line-height: 1.6; }
-    .form-group { margin-bottom: 24px; position: relative; }
-    label { display: block; font-size: 14px; margin-bottom: 8px; color: #000; font-weight: 500; }
+    <!-- Libraries -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    input, textarea {
-      width: 100%; padding: 12px 16px; border: 2px solid #000; border-radius: 8px; font-size: 14px; background: #fff; color: #000; transition: all 0.3s ease;
-    }
+    <!-- Bootstrap & Template CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
-    input:focus, textarea:focus {
-      border-color: #ffa500; outline: none; box-shadow: 0 0 0 4px rgba(255, 165, 0, 0.3); transform: translateY(-2px);
-    }
-
-    textarea { resize: none; height: 130px; }
-
-    .btn {
-      background: #000; color: #ffa500; border: 2px solid #ffa500; padding: 14px 32px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 500; width: 100%; transition: all 0.3s ease; margin-top: 10px;
-    }
-    .btn:hover { background: #fff; color: #000; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255,165,0,0.4); }
-
-    .contact-animation { flex: 1; background: linear-gradient(135deg, #000 0%, #1a1a1a 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; overflow: hidden; padding: 30px 20px; }
-
-    .circle { position: absolute; border-radius: 50%; background: rgba(255, 165, 0, 0.1); }
-    .circle:nth-child(1) { width: 80px; height: 80px; top: 10%; left: 10%; animation: float1 6s ease-in-out infinite; }
-    .circle:nth-child(2) { width: 60px; height: 60px; top: 60%; left: 80%; animation: float2 8s ease-in-out infinite; }
-    .circle:nth-child(3) { width: 100px; height: 100px; top: 70%; left: 5%; animation: float3 7s ease-in-out infinite; }
-    .circle:nth-child(4) { width: 50px; height: 50px; top: 20%; right: 10%; animation: float1 9s ease-in-out infinite; }
-
-    @keyframes float1 { 0%,100%{transform:translateY(0px)}50%{transform:translateY(-20px) translateX(10px)} }
-    @keyframes float2 { 0%,100%{transform:translateY(0px)}50%{transform:translateY(20px) translateX(-10px)} }
-    @keyframes float3 { 0%,100%{transform:translateY(0px)}50%{transform:translateY(-15px) translateX(-15px)} }
-
-    .logo { position: relative; z-index: 2; text-align: center; margin-bottom: 139px; }
-    .logo h1 { color: #ffa500; font-size: 32px; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-    .logo p { color: #fff; font-size: 14px; margin-top: 5px; }
-
-    .social-icons { position: relative; z-index: 2; display: flex; gap: 15px; margin-top: 135px; }
-    .social-icons a { color: #fff; font-size: 22px; border: 1px solid rgba(255,255,255,0.7); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease; text-decoration: none; }
-    .social-icons a:hover { background: #fff; color: #007bff; transform: scale(1.1); }
-
-    #formMessage { text-align: center; margin-top: 10px; font-weight: 600; }
-
-    @media (max-width: 768px) {
-      .contact-container { flex-direction: column; }
-      .contact-animation { min-height: 400px; }
-      .logo h1 { font-size: 26px; }
-    }
-  </style>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
-  <div class="contact-container">
-    <!-- LEFT FORM -->
-    <div class="contact-form">
-      <h2>Contact Us</h2>
-      <p>Let's get in touch!</p>
-      <form id="contactForm">
-        <div class="form-group"><label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <!-- Navbar Start -->
+<div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
+        <div class="col-lg-6 px-5 text-start">
+            <small><i class="fa fa-map-marker-alt me-2"></i>Darwaz-E-Balkh, Mazar-E-Sherif, Afghanistan</small>
+            <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@goha-afg.org</small>
         </div>
-        <div class="form-group"><label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <div class="col-lg-6 px-5 text-end">
+            <small>Follow us:</small>
+            <a class="text-white-50 ms-3" href="https://www.facebook.com/gateofhopecharity?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+            <a class="text-white-50 ms-3" href="https://www.instagram.com/afghanistanhumanrights/"><i class="fab fa-instagram"></i></a>
+            <a class="text-white-50 ms-3" href="https://www.youtube.com/@GateOfHopeCharityFoundation/videos"><i class="fab fa-youtube"></i></a>
+            <a class="text-white-50 ms-3" href="https://www.linkedin.com/company/gate-of-hope-afghanistan-organization/"><i class="fab fa-linkedin"></i></a>
+            <a class="text-white-50 ms-3" href="https://wa.me/93780946190" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <div class="form-group"><label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
-        </div>
-        <button class="btn" type="submit">Send Message</button>
-        <p id="formMessage"></p>
-      </form>
     </div>
 
-    <!-- RIGHT SECTION -->
-    <div class="contact-animation">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        
+        <a href="index.html" class="navbar-brand d-flex align-items-center me-auto">
+            <img src="img/logo.png" alt="Gate of Hope Logo" class="me-0" style="height: 90px; width: auto;">
+            <h1 class="fw-bold text-primary m-0">Gate of <span class="text-white">Hope</span></h1>
+        </a>
+        
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link ">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Who We Are</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="founder.html" class="dropdown-item">Founder Profile</a>
+                        <a href="vision.html" class="dropdown-item">Our Vision And Values</a>
+                        <a href="we_serve.html" class="dropdown-item">Whom We Serve</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">What We Do</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="education.html" class="dropdown-item">Educational Support</a>
+                        <a href="women.html" class="dropdown-item">Women Empowerment</a>
+                        <a href="food.html" class="dropdown-item">Kit Distribution</a>
+                    </div>
+                </div>
+                <a href="projects.html" class="nav-item nav-link">Projects</a>
+                <a href="Polices.html" class="nav-item nav-link">Policies</a>
+                <div class="nav-item dropdown">
+                <a href="underdeveloping.html" class="nav-link dropdown-toggle" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Media & Publication
+                </a>
+                <div class="dropdown-menu m-0" aria-labelledby="mediaDropdown">
+                <a href="underdeveloping.html" class="dropdown-item">News</a>
+               <a href="underdeveloping.html" class="dropdown-item">Upcoming Events</a>
+                   <a href="underdeveloping.html" class="dropdown-item">Success Story</a>
+               </div>
+               </div>
 
-      <div class="logo">
-        <p>Connect with us</p>
-      </div>
-
-      <div class="character" id="lottie" style="width: 235px; height: 235px; margin: 0 auto; display: block; transform: scale(1.8); transform-origin: center;"></div>
-
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a> 
-        <a href="#"><i class="fab fa-whatsapp"></i></a> 
-        <a href="#"><i class="fab fa-twitter"></i></a> 
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
-  <script>
-    // Lottie Animation
-    var animation = lottie.loadAnimation({
-      container: document.getElementById('lottie'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'https://assets10.lottiefiles.com/packages/lf20_puciaact.json'
+        <script>
+  // Allow main dropdown link to navigate as well
+  document.querySelectorAll('.nav-item.dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href !== '#') {
+        window.location.href = href; // Navigate normally
+      }
     });
+  });
+</script>
 
-    // AJAX PHP Form Submission
-    $(document).ready(function() {
-      $('#contactForm').submit(function(e) {
-        e.preventDefault();
-        $.ajax({
-          url: 'contact-process.php',
-          type: 'POST',
-          data: $(this).serialize(),
-          success: function(response) {
-            $('#formMessage').html(response).css('color', 'green');
-            $('#contactForm')[0].reset();
-          },
-          error: function() {
-            $('#formMessage').html('❌ Something went wrong. Please try again.').css('color', 'red');
-          }
+
+
+                <div class="nav-item dropdown">
+
+                </div>
+                <a href="contact.html" class="nav-item nav-link active">Contact</a>
+            </div>
+            <div class="d-none d-lg-flex ms-2">
+                <a class="btn btn-outline-primary py-2 px-3" href="">
+                    Donate Now
+                    <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                        <i class="fa fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+    <!-- Contact Page Content -->
+    <div class="contact-page" style="padding-top: 120px; padding-bottom: 10px;"> 
+        <div class="contact-container">
+            <!-- LEFT FORM -->
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <p>Let's get in touch!</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+                    </div>
+                    <button class="btn" type="submit">Send Message</button>
+                    <p id="formMessage"></p>
+                </form>
+            </div>
+
+            <!-- RIGHT SIDE ANIMATION -->
+            <div class="contact-animation">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+
+                <div class="logo">
+                    <p>Connect with us</p>
+                </div>
+
+                <div class="character" id="lottie" style="width: 235px; height: 235px; margin: 0 auto; transform: scale(1.8);"></div>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-4 border-bottom border-secondary">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <a href="index.html" class="d-flex align-items-center">
+                        <img src="img/logo.png" alt="Gate of Hope Logo" style="height: 160px; width: auto;">
+                        <div>
+                            <h1 class="fw-bold text-primary m-0" style="white-space: nowrap;">Gate of <span class="text-white">Hope</span></h1>
+                            <p class="text-white-50 mb-0 small">Become a Volunteer</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SEND</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-5">
+            <div class="row g-4 text-center text-md-start">
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-light mb-3">Main Address</h5>
+                    <p class="mb-2 text-muted"><i class="fa fa-map-marker-alt me-2"></i>Darwaz-E-Balkh, Mazar-E-Sharif, Afghanistan</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-light mb-3">Office Address</h5>
+                    <p class="mb-0 text-muted"><i class="fa fa-map-marker-alt me-2"></i><a href="#" target="_blank" style="color: #ccc; text-decoration: none;">Darwaz-E-Balkh, Mazar-E-Sharif, Afghanistan</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-light mb-3">Main Contacts</h5>
+                    <p class="mb-0"><strong>Lalmohammad Darwish</strong><br><a href="tel:+93780946190">(+93) 780 946 190</a></p>
+                    <p class="mb-1"><strong>Mobin Qazizada</strong><br><a href="tel:+15714350508">(+93) 771 562 998</a></p>
+                    <p class="mb-1"><strong>Laila Muhammadi</strong><br><a href="tel:+15713400197">(+93) 744 672 261</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-3">Main Emails</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-envelope me-2"></i><a href="mailto:info@goha-afg.org">info@goha-afg.org</a></li>
+                        <li><i class="fa fa-envelope me-2"></i><a href="mailto:complaints@goha-afg.org">complaints@goha-afg.org</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-3">Follow Us</h5>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-2">
+                        <a class="btn btn-outline-light btn-sm rounded-circle" href="https://www.facebook.com/gateofhopecharity?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-sm rounded-circle" href="https://www.instagram.com/afghanistanhumanrights/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-sm rounded-circle" href="https://www.youtube.com/@GateOfHopeCharityFoundation/videos"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-sm rounded-circle" href="https://www.linkedin.com/company/gate-of-hope-afghanistan-organization/"><i class="fab fa-linkedin"></i></a>
+                        <a class="btn btn-outline-light btn-sm rounded-circle" href="https://wa.me/93780946190"target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&copy; <a href="#">GATE OF HOPE</a>, All Rights Reserved.</div>
+                    <div class="col-md-6 text-center text-md-end"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+    <script>
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'https://assets10.lottiefiles.com/packages/lf20_puciaact.json'
         });
-      });
-    });
-  </script>
+
+        $(document).ready(function () {
+            $('#contactForm').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: 'contact-process.php',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        $('#formMessage').html(response).css('color', 'green');
+                        $('#contactForm')[0].reset();
+                    },
+                    error: function () {
+                        $('#formMessage').html('❌ Something went wrong. Please try again.').css('color', 'red');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 </html>
